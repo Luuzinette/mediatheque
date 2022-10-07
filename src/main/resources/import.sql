@@ -39,5 +39,6 @@ INSERT INTO BORROW_ITEMS(borrow_id, items_id) VALUES(1, 4);
 INSERT INTO BORROW_ITEMS(borrow_id, items_id) VALUES(1, 9);
 
 INSERT INTO BORROW(id, start_date, end_date, users_id) VALUES(2, '2021-11-04', '2021-12-14', 1);
+
 INSERT INTO BORROW_ITEMS(borrow_id, items_id) VALUES(2, 7);
 
