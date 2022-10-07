@@ -1,16 +1,23 @@
 package com.plb.mediatheque.entity;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "item")
 public class Item {
 	@Id
@@ -26,6 +33,9 @@ public class Item {
 	
 	@Column(name = "release_date", nullable = false)
 	private Date releaseDate;
+	
+	@ManyToMany(mappedBy="item", cascade = CascadeType.REMOVE) 
+	private Set<Borrow> borrow = new HashSet<Borrow>();
 	
 	public Item() {
 		

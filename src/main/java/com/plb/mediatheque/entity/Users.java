@@ -1,10 +1,16 @@
 package com.plb.mediatheque.entity;
 
+import java.util.HashSet;
+
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -27,6 +33,9 @@ public class Users {
 
     @Column(name = "password", nullable = false)
     private String password;
+    
+    @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE)
+    private Set<Borrow> borrowedItems = new HashSet<>();
 
 	public Users() {
 		
