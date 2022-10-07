@@ -22,10 +22,10 @@ public class Borrow {
     @SequenceGenerator(name = "borrowSequenceGenerator", allocationSize = 1)
     private Long id;
 	
-	@Column(name = "start_date", nullable = false)
+	@Column(name = "start_date")
 	private LocalDateTime startDate;
 	
-	@Column(name = "endDate", nullable = false)
+	@Column(name = "end_date")
 	private LocalDateTime endDate;
 	
 	@ManyToOne

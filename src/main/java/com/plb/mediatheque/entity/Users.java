@@ -22,16 +22,16 @@ public class Users {
     @SequenceGenerator(name = "userSequenceGenerator", allocationSize = 1)
     private Long id;
 	
-	@Column(name = "firstname", nullable = false)
+	@Column(name = "firstname")
     private String firstname;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
     
-    @Column(name = "login", nullable = false)
+    @Column(name = "login")
     private String login;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password")
     private String password;
     
     @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE)

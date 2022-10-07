@@ -8,13 +8,13 @@ import javax.persistence.Table;
 @Table(name = "cd")
 public class Cd extends Item {
 	
-	@Column(name = "artist", nullable = false)
+	@Column(name = "artist")
     private String artist;
 	
-	@Column(name = "cd_duration", nullable = false)
+	@Column(name = "cd_duration")
     private Long cdDuration;
 	
-	@Column(name = "nbr_titles", nullable = false)
+	@Column(name = "nbr_titles")
     private Long nbrTitles;
 
 	public Cd() {

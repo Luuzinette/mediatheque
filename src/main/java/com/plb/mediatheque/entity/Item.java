@@ -1,7 +1,6 @@
 package com.plb.mediatheque.entity;
 
 import java.util.Date;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +13,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "item")
 public class Item {
 	@Id
@@ -22,20 +21,20 @@ public class Item {
     @SequenceGenerator(name = "itemSequenceGenerator", allocationSize = 1)
     private Long id;
 	
-	@Column(name = "title", nullable = false)
+	@Column(name = "title")
     private String title;
 	
-	@Column(name = "nbr_copies", nullable = false)
+	@Column(name = "nbr_copies")
     private Long nbrCopies;
 	
-	@Column(name = "release_date", nullable = false)
+	@Column(name = "release_date")
 	private Date releaseDate;
 	
 	public Item() {
 		
 	}
 
-	public Item(Long id, String title, Long nbrCopies, Date releaseDate, Set<Borrow> borrow) {
+	public Item(Long id, String title, Long nbrCopies, Date releaseDate) {
 		super();
 		this.id = id;
 		this.title = title;

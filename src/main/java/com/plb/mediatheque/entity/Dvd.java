@@ -10,10 +10,10 @@ import javax.persistence.Table;
 @Table(name = "dvd")
 public class Dvd extends Item {
 	
-	@Column(name = "director", nullable = false)
+	@Column(name = "director")
     private String director;
 	
-	@Column(name = "dvd_duration", nullable = false)
+	@Column(name = "dvd_duration")
     private Long dvdDuration;
 	
 	@Enumerated(EnumType.STRING)

@@ -8,10 +8,10 @@ import javax.persistence.Table;
 @Table(name = "book")
 public class Book extends Item {
 	
-	@Column(name = "author", nullable = false)
+	@Column(name = "author")
     private String author;
 	
-	@Column(name = "num_isbn", nullable = false)
+	@Column(name = "num_isbn")
     private Long numIsbn;
 
 	public Book() {
