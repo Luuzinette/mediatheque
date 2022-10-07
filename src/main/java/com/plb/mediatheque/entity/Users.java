@@ -35,7 +35,7 @@ public class Users {
     private String password;
     
     @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE)
-    private Set<Borrow> borrowedItems = new HashSet<>();
+    private Set<Borrow> borrowedItems = new HashSet<Borrow>();
 
 	public Users() {
 		

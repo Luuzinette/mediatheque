@@ -30,7 +30,7 @@ public class Borrow {
 	
 	@ManyToOne
 	@JoinColumn(name="users_id")
-	private Users borrower;
+	private Users users;
 	
 	@ManyToMany
     @JoinColumn(name="item_id")
@@ -40,12 +40,12 @@ public class Borrow {
 		super();
 	}
 
-	public Borrow(Long id, LocalDateTime startDate, LocalDateTime endDate, Users borrower, List<Item> items) {
+	public Borrow(Long id, LocalDateTime startDate, LocalDateTime endDate, Users users, List<Item> items) {
 		super();
 		this.id = id;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.borrower = borrower;
+		this.users = users;
 		this.items = items;
 	}
 
@@ -74,11 +74,11 @@ public class Borrow {
 	}
 
 	public Users getBorrower() {
-		return borrower;
+		return users;
 	}
 
-	public void setBorrower(Users borrower) {
-		this.borrower = borrower;
+	public void setBorrower(Users users) {
+		this.users = users;
 	}
 
 	public List<Item> getItems() {
