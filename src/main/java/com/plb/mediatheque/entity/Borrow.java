@@ -28,8 +28,6 @@ public class Borrow {
 	@Column(name = "end_date")
 	private LocalDateTime endDate;
 	
-	// Peut-être nbre d'emprunts ?
-	
 	@ManyToOne
 	@JoinColumn(name="users_id")
 	private Users users;
