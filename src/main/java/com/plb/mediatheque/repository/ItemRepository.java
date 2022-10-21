@@ -9,7 +9,7 @@ import com.plb.mediatheque.entity.Item;
 
 public interface ItemRepository extends JpaRepository<Item, Long> {
 	
-	@Query("select i from Item i where i.nbrCopies >0")
+	@Query("from Item i where i.nbrCopies >0")
 	public List<Item> findDisponible();
 
 }
