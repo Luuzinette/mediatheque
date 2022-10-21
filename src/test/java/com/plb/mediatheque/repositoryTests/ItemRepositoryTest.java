@@ -32,19 +32,24 @@ public class ItemRepositoryTest {
         assertEquals(nbrCopies, itemRepository.findDisponible().size());
     }
 	
+//	@Test
+//	public void testFindDvd() {
+       
+//    }
+	
 	@Test
 	void testFindByReleaseDate() {
-		Date date = new Date();
-		date.setYear(2010);
-		int nbrNew=0;
-		List<Item> response = itemRepository.findByReleaseDate(date);
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.YEAR, 2010);
+		cal.set(0, 0);
+		List<Item> response = itemRepository.findByReleaseDate(cal.getTime());
 		for(Item i : response) {
-			if ((i.getNbrCopies()>0) && (date.before(i.getReleaseDate() )) ) {
-				nbrNew+=1;
+			if (i.getReleaseDate()>cal.getTime()) {
+				
 			}
 		}
-		System.out.println("Nombre de nouveautés : "+ nbrNew);
-		assertEquals(nbrNew, itemRepository.findByReleaseDate(date).size());
+		System.out.println("Nombre de nouveautés : " + );
+		assert
 	}
 
 }
