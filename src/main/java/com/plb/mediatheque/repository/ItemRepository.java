@@ -9,6 +9,7 @@ import com.plb.mediatheque.entity.Item;
 
 public interface ItemRepository extends JpaRepository<Item, Long> {
 	
+	// Trouve le nombre total d'items qui ont des copies disponibles
 	@Query("from Item i where i.nbrCopies >0")
 	public List<Item> findDisponible();
 
