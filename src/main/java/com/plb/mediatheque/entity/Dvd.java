@@ -54,4 +54,17 @@ public class Dvd extends Item {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Dvd [director=");
+		builder.append(director);
+		builder.append(", dvdDuration=");
+		builder.append(dvdDuration);
+		builder.append(", type=");
+		builder.append(type);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

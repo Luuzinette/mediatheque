@@ -11,13 +11,13 @@ import com.plb.mediatheque.service.ItemService;
 
 public class CatalogueController {
 	
-	@Autowired
-	ItemService itemService ;
+//	@Autowired
+//	ItemService itemService ;
 	
-	@GetMapping("/catalogue")
-	public ResponseEntity<List<Item>> findAllDisponible(){
-		List<Item> itemsDisponible= itemService.findAllDisponible();
-		return ResponseEntity.ok(itemsDisponible);
-	}
+//	@GetMapping("/catalogue")
+//	public ResponseEntity<List<Item>> findAllDisponible(){
+//		List<Item> itemsDisponible= itemService.findAllDisponible();
+//		return ResponseEntity.ok(itemsDisponible);
+//	}
 
 }

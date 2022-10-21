@@ -88,6 +88,22 @@ public class Borrow {
 	public void setItems(List<Item> items) {
 		this.items = items;
 	}
-    
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Borrow [id=");
+		builder.append(id);
+		builder.append(", startDate=");
+		builder.append(startDate);
+		builder.append(", endDate=");
+		builder.append(endDate);
+		builder.append(", users=");
+		builder.append(users);
+		builder.append(", items=");
+		builder.append(items);
+		builder.append("]");
+		return builder.toString();
+	}
 
 }

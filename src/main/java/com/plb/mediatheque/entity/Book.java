@@ -40,4 +40,15 @@ public class Book extends Item {
 		this.numIsbn = numIsbn;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Book [author=");
+		builder.append(author);
+		builder.append(", numIsbn=");
+		builder.append(numIsbn);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

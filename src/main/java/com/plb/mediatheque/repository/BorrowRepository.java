@@ -6,11 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.plb.mediatheque.entity.Borrow;
+import com.plb.mediatheque.entity.Users;
 
 public interface BorrowRepository extends JpaRepository<Borrow, Long> {
 	
 	// Trouver les emprunts d'un user
-	@Query("select e from Borrow e where e.users.id=?1")
-	public List<Borrow> findAllEmpruntsByUserId(Long id);
+	@Query("select b from Borrow b where b.users= :user")
+	List<Borrow> findBorrowsById(Users user);
 
 }

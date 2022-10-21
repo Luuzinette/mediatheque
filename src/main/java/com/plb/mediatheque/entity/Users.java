@@ -98,4 +98,21 @@ public class Users {
 		this.borrowedItems = borrowedItems;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Users [id=");
+		builder.append(id);
+		builder.append(", firstname=");
+		builder.append(firstname);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", login=");
+		builder.append(login);
+		builder.append(", password=");
+		builder.append(password);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

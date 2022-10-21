@@ -33,12 +33,12 @@ INSERT INTO BOOK (id, author, num_isbn) VALUES(8, 'Patrick K. Dewdney', 10307021
 INSERT INTO BOOK (id, author, num_isbn) VALUES(9, 'Glen Cook', 2290330582);
 
 /* Partie EMPRUNTS */
-INSERT INTO BORROW(id, start_date, end_date, users_id) VALUES(1, '2022-01-06', '2022-06-25', 3);
+INSERT INTO BORROW(id, start_date, end_date, users_id) VALUES(1, '2022-01-06', '2022-06-25', 1);
 
 INSERT INTO BORROW_ITEMS(borrow_id, items_id) VALUES(1, 4);
 INSERT INTO BORROW_ITEMS(borrow_id, items_id) VALUES(1, 9);
 
-INSERT INTO BORROW(id, start_date, end_date, users_id) VALUES(2, '2021-11-04', '2021-12-14', 1);
+INSERT INTO BORROW(id, start_date, end_date, users_id) VALUES(2, '2021-11-04', '2021-12-14', 3);
 
 INSERT INTO BORROW_ITEMS(borrow_id, items_id) VALUES(2, 7);
 

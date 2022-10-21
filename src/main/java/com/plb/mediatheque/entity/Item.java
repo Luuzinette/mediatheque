@@ -80,4 +80,19 @@ public class Item {
 		return nbrCopies > 0;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Item [id=");
+		builder.append(id);
+		builder.append(", title=");
+		builder.append(title);
+		builder.append(", nbrCopies=");
+		builder.append(nbrCopies);
+		builder.append(", releaseDate=");
+		builder.append(releaseDate);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

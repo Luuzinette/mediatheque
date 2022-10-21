@@ -18,15 +18,15 @@ public class ItemRepositoryTest {
 	
 	@Test
 	void testFindDisponible() {
-			int nbrInit=0;
-			List<Item> ret = itemRepository.findDisponible();
-			for(Item i : ret) {
-				if (i.getNbrCopies()>0) {
-					nbrInit+=1;
-				}
-			}
-			System.out.println("Nombre d'items disponibles en plusieurs exemplaires :"+ nbrInit);
-			assertEquals(nbrInit, itemRepository.findDisponible().size());
-	}
+		int nbrCopies =0;
+        List<Item> response = itemRepository.findDisponible();
+        for(Item i : response) {
+            if (i.getNbrCopies()>0) {
+                nbrCopies+=1;
+            }
+        }
+        System.out.println("Nombre d'items disponibles :" + nbrCopies);
+        assertEquals(nbrCopies, itemRepository.findDisponible().size());
+    }
 
 }

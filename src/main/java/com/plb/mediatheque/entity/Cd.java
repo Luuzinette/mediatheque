@@ -51,6 +51,18 @@ public class Cd extends Item {
 	public void setNbrTitles(Long nbrTitles) {
 		this.nbrTitles = nbrTitles;
 	}
-	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cd [artist=");
+		builder.append(artist);
+		builder.append(", cdDuration=");
+		builder.append(cdDuration);
+		builder.append(", nbrTitles=");
+		builder.append(nbrTitles);
+		builder.append("]");
+		return builder.toString();
+	}
 
 }
