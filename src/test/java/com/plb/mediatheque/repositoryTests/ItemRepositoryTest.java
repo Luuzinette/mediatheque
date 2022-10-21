@@ -25,7 +25,7 @@ public class ItemRepositoryTest {
                 nbrCopies+=1;
             }
         }
-        System.out.println("Nombre d'items disponibles :" + nbrCopies);
+        System.out.println("Nombre d'items disponibles : " + nbrCopies);
         assertEquals(nbrCopies, itemRepository.findDisponible().size());
     }
 
