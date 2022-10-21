@@ -25,7 +25,7 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 	public List<Item> findAllBook();
 	
 	// Voir les nouveautés uniquement
-	@Query("from Item i where i.release_date >= :date")
+	@Query("from Item i where i.releaseDate >= :date")
 	public List<Item> findByReleaseDate(Date date);
 
 }
