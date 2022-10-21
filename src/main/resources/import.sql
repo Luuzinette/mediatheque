@@ -13,7 +13,7 @@ INSERT INTO ITEM (id, title, nbr_Copies, release_Date) VALUES(3, 'Harry Potter',
 
 INSERT INTO ITEM (id, title, nbr_Copies, release_Date) VALUES(4, 'Spirituality and Distortion', 3, '2020-03-27');
 INSERT INTO ITEM (id, title, nbr_Copies, release_Date) VALUES(5, 'Meteora', 6, '2003-03-25');
-INSERT INTO ITEM (id, title, nbr_Copies, release_Date) VALUES(6, '21st Century Breakdown', 0, '2009-05-15');
+INSERT INTO ITEM (id, title, nbr_Copies, release_Date) VALUES(6, '21st Century Breakdown', 5, '2009-05-15');
 
 INSERT INTO ITEM (id, title, nbr_Copies, release_Date) VALUES(7, 'Le Nom du vent', 3, '2007-03-27');
 INSERT INTO ITEM (id, title, nbr_Copies, release_Date) VALUES(8, 'La Peste et la Vigne', 4, '2018-10-03');

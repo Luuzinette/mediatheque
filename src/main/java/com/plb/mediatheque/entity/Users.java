@@ -1,7 +1,6 @@
 package com.plb.mediatheque.entity;
 
 import java.util.HashSet;
-
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -41,12 +40,14 @@ public class Users {
 		
 	}
 
-	public Users(Long id, String firstname, String name, String login, String password) {
+	public Users(Long id, String firstname, String name, String login, String password, Set<Borrow> borrowedItems) {
+		super();
 		this.id = id;
 		this.firstname = firstname;
 		this.name = name;
 		this.login = login;
 		this.password = password;
+		this.borrowedItems = borrowedItems;
 	}
 
 	public Long getId() {
@@ -89,5 +90,12 @@ public class Users {
 		this.password = password;
 	}
 
+	public Set<Borrow> getBorrowedItems() {
+		return borrowedItems;
+	}
+
+	public void setBorrowedItems(Set<Borrow> borrowedItems) {
+		this.borrowedItems = borrowedItems;
+	}
 
 }
