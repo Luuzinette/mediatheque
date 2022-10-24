@@ -11,15 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "borrow")
 public class Borrow {
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "borrowSequenceGenerator")
-    @SequenceGenerator(name = "borrowSequenceGenerator", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
 	@Column(name = "start_date")

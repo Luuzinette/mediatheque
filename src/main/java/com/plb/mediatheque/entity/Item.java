@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -18,8 +17,7 @@ import javax.persistence.Transient;
 @Table(name = "item")
 public class Item {
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "itemSequenceGenerator")
-    @SequenceGenerator(name = "itemSequenceGenerator", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
 	@Column(name = "title")
