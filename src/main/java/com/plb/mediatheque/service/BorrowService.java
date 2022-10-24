@@ -56,7 +56,6 @@ public class BorrowService {
 
 		Borrow location = new Borrow();
 		location.setStartDate(LocalDateTime.now());
-		location.setEndDate(LocalDateTime.now().plusDays(7));
 		location.setItems(docDispo);
 		location.setBorrower(borrower);
         
@@ -68,25 +67,17 @@ public class BorrowService {
     
     // Rendre un emprunt
     // Ne supprime pas les emprunts de l'utilisateur dans Borrow pour conserver un historique
-    public Borrow returnABorrow(Borrow borrow) throws TimeDepassementException {
+    public Borrow returnABorrow(Borrow borrow) {
 
     	borrow = borrowRepository.findById(borrow.getId()).orElseThrow(() -> new EntityNotFoundException("Cet emprunt n'existe pas."));
 
     	List<Item> items = borrow.getItems();
+    	borrow.setEndDate(LocalDateTime.now());
 
     	for (Item item : items) {
-    		Item i = itemRepository.findById(item.getId()).get();
-    		i.setNbrCopies(i.getNbrCopies() + 1);
-    		itemRepository.save(i);
+    		item.setNbrCopies(item.getNbrCopies() + 1);
+    		itemRepository.save(item);
     		}
-    	
-    	LocalDateTime startDate=borrow.getStartDate();
-		LocalDateTime endDate = borrow.getEndDate();
-		long difference = ChronoUnit.DAYS.between(startDate,endDate);
-		
-		if (difference > 7) {
-			throw new TimeDepassementException("La date limite de restitution a été dépassée.");
-		}
 		
 		return borrow;
     	}
