@@ -45,10 +45,10 @@ public class BorrowController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(borrowService.makeABorrow(borrower, items));
 	}
 	
-	@DeleteMapping("/borrows/{id}/retourner")
-	public void returnBorrow(@PathVariable Long id) {
-		Borrow borrow = borrowRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Cet emprunt n'existe pas."));
-		borrow.setId(id);
+	@DeleteMapping("/borrows/{idBorrow}/retourner")
+	public void returnBorrow(@PathVariable Long idBorrow) {
+		Borrow borrow = borrowRepository.findById(idBorrow).orElseThrow(() -> new EntityNotFoundException("Cet emprunt n'existe pas."));
+		borrow.setId(idBorrow);
 		
 		borrowService.returnABorrow(borrow);
 	}
