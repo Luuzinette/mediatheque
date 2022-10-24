@@ -67,6 +67,7 @@ public class BorrowService {
     
     
     // Rendre un emprunt
+    // Ne supprime pas les emprunts de l'utilisateur dans Borrow pour conserver un historique
     public Borrow returnABorrow(Borrow borrow) throws TimeDepassementException {
 
     	borrow = borrowRepository.findById(borrow.getId()).orElseThrow(() -> new EntityNotFoundException("Cet emprunt n'existe pas."));
