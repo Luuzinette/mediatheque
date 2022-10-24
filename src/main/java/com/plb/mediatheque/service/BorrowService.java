@@ -1,6 +1,7 @@
 package com.plb.mediatheque.service;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -66,17 +67,26 @@ public class BorrowService {
     
     
     // Rendre un emprunt
-	/*
-	 * public Borrow returnABorrow(Borrow borrow) throws TimeDepassementException {
-	 * 
-	 * borrow = borrowRepository.findById(borrow.getId()).orElseThrow(() -> new
-	 * EntityNotFoundException("Cet emprunt n'existe pas."));
-	 * 
-	 * List<Item> items = borrow.getItems();
-	 * 
-	 * for (Item item : items) { Item i =
-	 * itemRepository.findById(item.getId()).get(); i.setNbrCopies(i.getNbrCopies()
-	 * + 1); itemRepository.save(i); } }
-	 */
-	
+    public Borrow returnABorrow(Borrow borrow) throws TimeDepassementException {
+
+    	borrow = borrowRepository.findById(borrow.getId()).orElseThrow(() -> new EntityNotFoundException("Cet emprunt n'existe pas."));
+
+    	List<Item> items = borrow.getItems();
+
+    	for (Item item : items) {
+    		Item i = itemRepository.findById(item.getId()).get();
+    		i.setNbrCopies(i.getNbrCopies() + 1);
+    		itemRepository.save(i);
+    		}
+    	
+    	LocalDateTime startDate=borrow.getStartDate();
+		LocalDateTime endDate = borrow.getEndDate();
+		long difference = ChronoUnit.DAYS.between(startDate,endDate);
+		
+		if (difference > 7) {
+			throw new TimeDepassementException("La date limite de restitution a été dépassée.");
+		}
+		
+		return borrow;
+    	}
 }
