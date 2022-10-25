@@ -35,9 +35,12 @@ public class BorrowService {
     public Borrow makeABorrow(Users borrower, Set<Item> items) throws BorrowLimitException, DocNotAvailableException {
     	
     	borrower = usersRepository.findById(borrower.getId()).orElseThrow(() -> new EntityNotFoundException("Cet utilisateur n'existe pas."));
-		int emprunt = borrower.getBorrowedItems().size();
+    	int nbrItemsBorrowed = 0;
+    	for (Borrow borrow : borrower.getBorrowedItems()) {
+    		nbrItemsBorrowed += borrow.getItems().size();
+    	}
 
-		if (emprunt + items.size() > 3) {
+		if (nbrItemsBorrowed + items.size() > 3) {
 			throw new BorrowLimitException("La limite de 3 emprunts a été atteinte pour cet utilisateur.");
 		}
 
