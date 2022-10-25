@@ -16,7 +16,7 @@ INSERT INTO ITEM (title, nbr_Copies, release_Date) VALUES('Meteora', 6, '2003-03
 INSERT INTO ITEM (title, nbr_Copies, release_Date) VALUES('21st Century Breakdown', 5, '2009-05-15');
 
 INSERT INTO ITEM (title, nbr_Copies, release_Date) VALUES('Le Nom du vent', 3, '2007-03-27');
-INSERT INTO ITEM (title, nbr_Copies, release_Date) VALUES('La Peste et la Vigne', 4, '2018-10-03');
+INSERT INTO ITEM (title, nbr_Copies, release_Date) VALUES('La Peste et la Vigne', 0, '2018-10-03');
 INSERT INTO ITEM (title, nbr_Copies, release_Date) VALUES('La Compagnie noire', 1, '1984-05-15');
 
 /* Partie DVD, CD et BOOK */

@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "users")
 public class Users {
@@ -32,6 +34,7 @@ public class Users {
     private String password;
     
     @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private Set<Borrow> borrowedItems = new HashSet<Borrow>();
 
 	public Users() {

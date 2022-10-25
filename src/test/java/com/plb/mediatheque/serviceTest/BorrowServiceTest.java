@@ -40,7 +40,6 @@ public class BorrowServiceTest {
 
 		assertNotNull(borrow.getId());
 		assertEquals(2,borrow.getItems().size());
-		
 	}
 
 }
